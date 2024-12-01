@@ -69,11 +69,12 @@ const DeclensionTable: React.FC<TableProps> = ({ enabledDeclensions, onDeclensio
             }}
         >
             {enabledDeclensions.map((declension, declensionIndex) => (
-                <div key={declensionIndex}>
+                <div key={`declension-${declensionIndex}`}>
                     {nounCases.map((nounCase, caseIndex) => {
                         return (
                             <div
                                 className={`tile`}
+                                key={`case-${declensionIndex}-${caseIndex}`}
                                 onClick={() => onDeclensionPressed({ declension, isPlural: caseIndex > 4, case: nounCase })}
                                 style={{
                                     // Esentially, it disables the border if the border of another div is touching it or
