@@ -1,0 +1,37 @@
+.tile {
+    width: 8.3333dvh;
+    height: 8.3333dvh;
+
+    background-color: transparent; 
+
+    border: 1px solid black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    border-bottom: 0;
+    border-left: 0;
+
+    /* Disable text selection*/
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.tile:hover {
+    background-color: color-mix(in srgb, var(--background) 80%, black 20%);
+}
+
+@media (prefers-color-scheme: dark) {
+    .tile:hover {
+        background-color: color-mix(in srgb, var(--background) 80%, white 20%);
+    }
+
+    .tile {
+        border: 1px solid white;
+        border-bottom: 0;
+        border-left: 0;
+    }
+}

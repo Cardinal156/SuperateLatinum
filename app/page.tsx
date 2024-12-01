@@ -1,11 +1,15 @@
-import Image from "next/image";
+"use client";
+
+import DeclensionTable from "./components/DeclensionTable/DeclensionTable";
+
 
 export default function Home() {
     return (
-        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-            <h1>
-                EE
-            </h1>
+        <div className="grid grid-rows-auto items-center justify-items-center overflow-auto min-h-screen">
+            <DeclensionTable 
+                enabledDeclensions={["secondMas", "firstFem", "secondNeut"]} 
+                onDeclensionPressed={ (data) => {console.log(data)} }    
+            />
         </div>
     );
 }
